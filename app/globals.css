@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 33% 95%;
+    --foreground: 340 8% 9%;
+    --card: 40 43% 97%;
+    --card-foreground: 340 8% 9%;
+    --primary: 344 51% 23%;
+    --primary-foreground: 40 43% 97%;
+    --secondary: 38 25% 87%;
+    --secondary-foreground: 340 8% 9%;
+    --muted: 38 25% 90%;
+    --muted-foreground: 24 4% 32%;
+    --accent: 340 40% 34%;
+    --accent-foreground: 40 43% 97%;
+    --border: 36 18% 82%;
+    --input: 36 18% 78%;
+    --ring: 344 51% 23%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-pearl text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-burgundy text-ivory;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-wine;
+  }
+
+  .horizon-rule {
+    @apply block h-px w-full origin-left bg-champagne;
+  }
+
+  .glass-nav {
+    background: rgba(246, 242, 236, 0.78);
+    backdrop-filter: blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  }
+
+  .texture-grain {
+    position: relative;
+  }
+  .texture-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
