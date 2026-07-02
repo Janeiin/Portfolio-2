@@ -25,7 +25,7 @@ export default function Nav() {
     <nav className={`nav${scrolled ? " scrolled" : ""}`}>
       <div className="wrap nav-inner">
         <a href="#top" className="logo">
-          Janin<span className="dot">.</span>
+          Third Horizon<span className="dot">.</span>
         </a>
         <button
           className={`nav-toggle${open ? " open" : ""}`}

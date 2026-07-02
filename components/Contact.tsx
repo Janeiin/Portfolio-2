@@ -40,12 +40,12 @@ export default function Contact() {
             </p>
             <ul className="contact-links">
               <li>
-                <a href="mailto:hello@janin.com">
+                <a href="mailto:hello@thirdhorizon.studio">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
                     <rect x="3" y="5" width="18" height="14" rx="3" />
                     <path d="M3 8l9 6 9-6" />
                   </svg>
-                  hello@janin.com
+                  hello@thirdhorizon.studio
                 </a>
               </li>
               <li>

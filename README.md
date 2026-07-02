@@ -1,4 +1,4 @@
-# Janin — Portfolio (Next.js)
+# Third Horizon — Portfolio (Next.js)
 
 Luxury single-page portfolio, converted from a static HTML build to Next.js 15 (App Router) + React 19 + TypeScript.
 
@@ -15,7 +15,7 @@ npm start        # serve production build
 
 ```
 app/
-  layout.tsx       Fonts (next/font: Fraunces, Figtree, Space Grotesk), metadata
+  layout.tsx       Fonts (next/font: Bodoni Moda, Manrope, Space Grotesk), metadata
   page.tsx         Composes all sections
   globals.css      Full design system (tokens, sections, animations)
 components/
@@ -40,7 +40,7 @@ hooks/useInView.ts      In-view + reduced-motion hooks
 ## Customising
 
 - Replace the portrait placeholders in `Hero.tsx` and `About.tsx` with real photos (e.g. `next/image`).
-- Update `hello@janin.com`, LinkedIn, and CV links in `Contact.tsx` / `Footer.tsx`.
+- Update `hello@thirdhorizon.studio`, LinkedIn, and CV links in `Contact.tsx` / `Footer.tsx`.
 - All section content lives in plain data arrays at the top of each component — edit there.
 - Design tokens (colors, radii, shadows, type) are CSS variables at the top of `app/globals.css`.
 - The contact form is a front-end demo; wire `send()` in `Contact.tsx` to a route handler or a service like Formspree/Resend.

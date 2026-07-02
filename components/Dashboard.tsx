@@ -45,11 +45,11 @@ function LineChart() {
     >
       <defs>
         <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1D2B4F" stopOpacity=".14" />
-          <stop offset="100%" stopColor="#1D2B4F" stopOpacity="0" />
+          <stop offset="0%" stopColor="#B14D5C" stopOpacity=".22" />
+          <stop offset="100%" stopColor="#B14D5C" stopOpacity="0" />
         </linearGradient>
       </defs>
-      <g stroke="#E5E0D5" strokeWidth="1">
+      <g stroke="#282223" strokeWidth="1">
         <line x1="0" y1="50" x2="560" y2="50" />
         <line x1="0" y1="100" x2="560" y2="100" />
         <line x1="0" y1="150" x2="560" y2="150" />
@@ -118,7 +118,7 @@ function Donut({ pct }: { pct: number }) {
         fontFamily="var(--utility)"
         fontSize="24"
         fontWeight="600"
-        fill="#23262B"
+        fill="#F2EFEC"
       >
         {pct}%
       </text>
@@ -176,15 +176,15 @@ export default function Dashboard() {
               <Donut pct={68} />
               <div className="donut-legend">
                 <div>
-                  <i style={{ background: "#1D2B4F" }} />
+                  <i style={{ background: "#B14D5C" }} />
                   Organic social — 68%
                 </div>
                 <div>
-                  <i style={{ background: "#8E9C85" }} />
+                  <i style={{ background: "#6E0F1F" }} />
                   Paid social — 22%
                 </div>
                 <div>
-                  <i style={{ background: "#E9E1D2" }} />
+                  <i style={{ background: "#3A3335" }} />
                   Referral &amp; other — 10%
                 </div>
               </div>

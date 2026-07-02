@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { Fraunces, Figtree, Space_Grotesk } from "next/font/google";
+import { Bodoni_Moda, Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-fraunces",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-bodoni",
   display: "swap",
 });
 
-const figtree = Figtree({
+const manrope = Manrope({
   subsets: ["latin"],
-  style: ["normal", "italic"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-figtree",
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -26,9 +25,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Janin — Strategy × Story × Social",
+  title: "Third Horizon — Strategy × Story × Social",
   description:
-    "Janin, PhD — strategy-first social media for organisations that want measurable impact.",
+    "Third Horizon is a strategy, marketing, and social media consultancy — turning business strategy into stories that deliver measurable impact.",
 };
 
 export default function RootLayout({
@@ -37,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${figtree.variable} ${spaceGrotesk.variable}`}
+      className={`${bodoni.variable} ${manrope.variable} ${spaceGrotesk.variable}`}
     >
       <body>{children}</body>
     </html>

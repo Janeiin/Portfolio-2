@@ -3,31 +3,31 @@ import Counter from "@/components/Counter";
 
 const TIMELINE = [
   {
-    when: "Education",
-    what: "Bachelor of International Business & Management • PhD in Marketing",
-    note: "My doctoral research explored audience behaviour and consumer decision-making. I still believe the best marketing is grounded in evidence, not assumptions.",
+    when: "Foundation",
+    what: "PhD in Marketing",
+    note: "Doctoral research into audience behaviour and decision-making — the evidence base behind every campaign I build.",
   },
   {
-    when: "Marketing & Social Media",
-    what: "Brand strategy, content and digital marketing",
-    note: "Worked across marketing, social media, digital media and events for brands including Mercedes-Benz, Ferrari, Lamborghini and Maserati. Developed a research-backed social media strategy for Shiseido and previously worked as a Digital Media Account Manager.",
+    when: "Academia",
+    what: "University lecturer & researcher",
+    note: "Six years teaching marketing and coordinating courses, translating complex ideas for demanding audiences.",
   },
   {
     when: "Corporate",
     what: "Group strategy & transformation",
-    note: "Led strategy across large organisations, combining market research, communications, storytelling and executive engagement to turn ideas into action.",
+    note: "Strategy leadership across large-scale organisations — capital decisions, transformation programs, executive storytelling.",
   },
   {
     when: "Today",
-    what: "Strategic Marketing Consultant",
-    note: "Helping organisations navigate a fast-moving world by combining rigorous strategy and research with creative marketing and storytelling.",
+    what: "Strategic marketing consultant",
+    note: "Bringing boardroom rigour to brand and social — strategy, research, and content in one integrated practice.",
   },
 ];
 
 const STATS = [
-  { to: 8, label: "Years in Marketing & Strategy" },
-  { to: 10, label: "Brands managed" },
-  { to: 15, label: "Marketing & branded events" },
+  { to: 8, label: "Years in strategy & marketing" },
+  { to: 10, label: "Transformation programs led" },
+  { to: 450, label: "Google Scholar citations" },
 ];
 
 export default function About() {
@@ -37,23 +37,50 @@ export default function About() {
         <Reveal className="section-head">
           <div>
             <p className="eyebrow">About</p>
-            <h2>Hi, <em>I'm Janin.</em></h2>
+            <h2>
+              Strategy first. <em>Story always.</em>
+            </h2>
           </div>
+          <p>
+            Most social media starts with content. Mine starts with the
+            business question behind it.
+          </p>
         </Reveal>
         <div className="about-grid">
           <Reveal as="figure" className="about-portrait">
-            <figcaption>Portrait — Janin</figcaption>
+            <figcaption>Portrait — Janin, PhD</figcaption>
           </Reveal>
           <Reveal className="about-body" delay={1}>
-            <p className="about-lede">I'm a creative, strategist, and marketer who loves helping businesses turn good ideas into brands people actually remember.</p>
-            <p>My career has taken me from corporate boardrooms and university classrooms to content shoots, brand workshops, and digital campaigns. Along the way I've worked on everything from enterprise strategy and market research to social media, websites, brand positioning, and AI-powered marketing.</p>
-            <p>That mix is my superpower. I can zoom out to understand where your business is going, then zoom back in to create the content, messaging, and customer experience that gets you there.</p>
-            <p><strong>Most marketers start with, "What should we post this week?"</strong></p>
-            <p><strong>I start with, "What problem are we solving?"</strong></p>
-            <p>Because the best marketing isn't just creative—it's intentional. Every campaign should have a purpose, every piece of content should support a business goal, and every brand should tell a story worth following.</p>
-            <p><em>(And yes, as a millennial, I spend an unreasonable amount of time on social media—but at least now I can call it market research.)</em></p>
+            <p className="about-lede">
+              I&apos;m Janin — a marketing PhD who spent years inside
+              boardrooms, lecture theatres, and research projects before ever
+              writing a caption.
+            </p>
+            <p>
+              My background spans{" "}
+              <strong>
+                corporate strategy, brand strategy, market research, higher
+                education, and business consulting
+              </strong>
+              . I&apos;ve advised on major capital and transformation
+              decisions, taught marketing at university level, and published
+              peer-reviewed research on how audiences actually think and
+              decide.
+            </p>
+            <p>
+              That path shapes how I work. Where a traditional social media
+              manager begins with a content calendar, I begin with your
+              business model, your audience data, and the outcome you&apos;re
+              accountable for. Content comes last — and lands harder because
+              of it.
+            </p>
+            <p>
+              <strong>My philosophy is simple:</strong> every post is a
+              strategic asset. If a piece of content can&apos;t be traced back
+              to a business goal, it doesn&apos;t earn a place in the plan.
+            </p>
             <ul className="timeline">
-              {TIMELINE.map((t)=>(
+              {TIMELINE.map((t) => (
                 <li key={t.when}>
                   <span className="t-when">{t.when}</span>
                   <p className="t-what">{t.what}</p>
@@ -62,9 +89,12 @@ export default function About() {
               ))}
             </ul>
             <div className="about-stats">
-              {STATS.map((s)=>(
+              {STATS.map((s) => (
                 <div className="stat-card" key={s.label}>
-                  <div className="n"><Counter to={s.to}/><sup>+</sup></div>
+                  <div className="n">
+                    <Counter to={s.to} />
+                    <sup>+</sup>
+                  </div>
                   <div className="d">{s.label}</div>
                 </div>
               ))}

@@ -3,10 +3,10 @@ export default function Footer() {
     <footer>
       <div className="wrap footer-inner">
         <a href="#top" className="logo">
-          Janin<span className="dot">.</span>
+          Third Horizon<span className="dot">.</span>
         </a>
         <p>
-          © 2026 Janin — Strategy <span className="times">×</span> Story{" "}
+          © 2026 Third Horizon — Strategy <span className="times">×</span> Story{" "}
           <span className="times">×</span> Social
         </p>
         <ul className="socials">
