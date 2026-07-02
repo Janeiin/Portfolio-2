@@ -1,71 +1,45 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
-import { Navbar } from "@/components/site/navbar";
-import { Footer } from "@/components/site/footer";
-import { siteConfig } from "@/lib/data";
+import { Fraunces, Figtree, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const inter = Inter({
+const figtree = Figtree({
   subsets: ["latin"],
-  variable: "--font-inter",
+  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-figtree",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-space",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: {
-    default: `${siteConfig.name} — Strategy & Marketing Consultancy`,
-    template: `%s — ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  keywords: [
-    "strategy consultancy",
-    "marketing consultancy",
-    "brand strategy",
-    "AI marketing",
-    "market research",
-    "boutique consultancy",
-  ],
-  openGraph: {
-    type: "website",
-    locale: "en_AU",
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    title: `${siteConfig.name} — Strategy & Marketing Consultancy`,
-    description: siteConfig.description,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${siteConfig.name} — Strategy & Marketing Consultancy`,
-    description: siteConfig.description,
-  },
-  robots: { index: true, follow: true },
+  title: "Janin — Strategy × Story × Social",
+  description:
+    "Janin, PhD — strategy-first social media for organisations that want measurable impact.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
-      <body>
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-burgundy focus:px-6 focus:py-3 focus:text-sm focus:text-ivory"
-        >
-          Skip to content
-        </a>
-        <Navbar />
-        <main id="main">{children}</main>
-        <Footer />
-      </body>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${figtree.variable} ${spaceGrotesk.variable}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }

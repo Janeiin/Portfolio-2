@@ -1,81 +1,46 @@
-# THIRD HORIZON
+# Janin — Portfolio (Next.js)
 
-The digital presence of a boutique strategy and marketing consultancy.
-Built with Next.js 15, React 19, TypeScript, Tailwind CSS, shadcn style components and Framer Motion.
+Luxury single-page portfolio, converted from a static HTML build to Next.js 15 (App Router) + React 19 + TypeScript.
 
-## Stack
-
-| Layer      | Technology                          |
-| ---------- | ----------------------------------- |
-| Framework  | Next.js 15 (App Router)             |
-| UI         | React 19, TypeScript                |
-| Styling    | Tailwind CSS, custom design tokens  |
-| Components | shadcn/ui patterns (`components/ui`)|
-| Motion     | Framer Motion                       |
-| Icons      | Lucide                              |
-| Fonts      | Cormorant Garamond + Inter (next/font) |
-
-## Getting started
+## Run it
 
 ```bash
 npm install
-npm run dev
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm start        # serve production build
 ```
-
-Open http://localhost:3000.
-
-## Production build
-
-```bash
-npm run build
-npm start
-```
-
-## Deploy to Vercel
-
-1. Push this repository to GitHub.
-2. Import the repo at vercel.com/new. No configuration is required.
-3. Update `siteConfig.url` in `lib/data.ts` to your production domain so the sitemap, robots and Open Graph metadata resolve correctly.
 
 ## Structure
 
 ```
-app/                  Routes (App Router)
-  page.tsx            Home
-  services/           Services
-  work/               Selected Work + case study detail pages
-  founder/            Founder story
-  insights/           Insights + article pages
-  contact/            Contact
-  sitemap.ts          Generated sitemap
-  robots.ts           Robots rules
+app/
+  layout.tsx       Fonts (next/font: Fraunces, Figtree, Space Grotesk), metadata
+  page.tsx         Composes all sections
+  globals.css      Full design system (tokens, sections, animations)
 components/
-  ui/                 shadcn style primitives (button, card, input, textarea)
-  site/               Navbar, footer, container, section title
-  motion/             FadeIn, TextReveal, Counter, HorizonLine
-  sections/           Page sections (hero, services, philosophy, work, stats…)
-lib/
-  data.ts             All site content: services, work, insights, testimonials
-  utils.ts            cn() class helper
+  Nav.tsx          Sticky glass nav + mobile menu        (client)
+  Hero.tsx         Headline animation, parallax portrait (client)
+  Marquee.tsx      Scrolling Strategy × Story band       (server)
+  About.tsx        Bio, timeline, animated stats         (server)
+  Skills.tsx       Four discipline cards                 (server)
+  Campaigns.tsx    Featured campaign case cards          (server)
+  Gallery.tsx      Masonry social gallery                (server)
+  CaseStudies.tsx  Two 9-step method case studies        (server)
+  Dashboard.tsx    KPI counters + line/bar/donut charts  (client)
+  Testimonials.tsx Client quotes                         (server)
+  Services.tsx     Eight service cards                   (server)
+  Contact.tsx      Contact links + demo form             (client)
+  Footer.tsx       Footer + socials                      (server)
+components/Reveal.tsx   Scroll-reveal wrapper (IntersectionObserver)
+components/Counter.tsx  Animated count-up number
+hooks/useInView.ts      In-view + reduced-motion hooks
 ```
 
-## Editing content
+## Customising
 
-All copy lives in `lib/data.ts`. Add a case study or insight by appending to
-the relevant array; routes, sitemap entries and cards are generated
-automatically.
-
-## Photography
-
-The design ships with abstract gradient treatments as placeholders. To use
-photography, drop images into `public/` and replace the gradient `div`s in
-`components/sections/founder-intro.tsx`, `app/founder/page.tsx` and
-`app/work/[slug]/page.tsx` with `next/image`. Unsplash is already whitelisted
-in `next.config.ts` for remote images.
-
-## Design system
-
-- Palette: warm pearl, soft stone, champagne silver, off white, deep burgundy, muted wine, graphite, near black.
-- Type: Cormorant Garamond for display, Inter for body.
-- Signature motif: the horizon line, a thin rule that draws itself across sections as they enter view.
-- Motion: soft fades, line by line text reveals, animated statistics, gentle card lifts. Reduced motion is respected globally.
+- Replace the portrait placeholders in `Hero.tsx` and `About.tsx` with real photos (e.g. `next/image`).
+- Update `hello@janin.com`, LinkedIn, and CV links in `Contact.tsx` / `Footer.tsx`.
+- All section content lives in plain data arrays at the top of each component — edit there.
+- Design tokens (colors, radii, shadows, type) are CSS variables at the top of `app/globals.css`.
+- The contact form is a front-end demo; wire `send()` in `Contact.tsx` to a route handler or a service like Formspree/Resend.
